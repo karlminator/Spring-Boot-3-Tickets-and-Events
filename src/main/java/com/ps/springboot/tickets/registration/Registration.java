@@ -1,18 +1,11 @@
 package com.ps.springboot.tickets.registration;
 
-//import jakarta.validation.constraints.NotBlank;
-//import jakarta.validation.constraints.NotNull;
-
-//public record Registration(
-//        Integer id,
-//        @NotNull(message = "Product id is required") Integer productId,
-//        String ticketCode,
-//        @NotBlank(message = "Attendee name is required") String attendeeName) {
-//}
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record Registration(
         Integer id,
-        Integer productId,
+        @NotNull(message = "Product id is required") Integer productId,
         String ticketCode,
-        String attendeeName) {
+        @NotBlank(message = "Attendee name is required") String attendeeName) {
 }
