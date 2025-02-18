@@ -1,5 +1,6 @@
 package com.ps.springboot.tickets.registration;
 
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Map;
@@ -9,8 +10,17 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+public interface RegistrationRepository extends MongoRepository<Registration, String>{
+
+    Optional<Registration> findByTicketCode(String ticketCode);
+
+    void deleteByTicketCode(String ticketCode);
+}
+
+/* --old implementation--
 @Repository
 public class RegistrationRepository {
+
 
     private static final AtomicInteger ID_GENERATOR = new AtomicInteger();
 
@@ -48,3 +58,4 @@ public class RegistrationRepository {
         registrationByTicketCode.remove(ticketCode);
     }
 }
+*/
