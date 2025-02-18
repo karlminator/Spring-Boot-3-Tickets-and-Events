@@ -11,4 +11,4 @@ spring:
     open_in_view: false
   sql:
     init:
-      mode: never
+      mode: always
