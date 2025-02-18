@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: tickets
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open_in_view: false
+  sql:
+    init:
+      mode: always
